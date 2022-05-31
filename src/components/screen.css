@@ -1,0 +1,21 @@
+.screenInput {
+    background-color: #2E0249;
+    color: white;
+    text-align: right;
+}
+
+.screenInput:focus-visible {
+    outline: none;
+}
+
+.screenInput::-webkit-outer-spin-button,
+.screenInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+::placeholder {
+  color: white;
+}
+
+

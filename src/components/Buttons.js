@@ -9,9 +9,12 @@ const ButtonEje = Styled.div `
     width: 97px;
     background-color: #A91079;
     margin-bottom: 0px;
+    font-size: 40px;
     border: 1px solid #480ca8;
     border-radius: 5px;
     cursor: pointer;
+    text-align: center;
+    line-height: 75px;
     :hover {
         box-shadow: 0 0.5em 0.5em -0.4em yellow;
         border-color: yellow;
@@ -23,10 +26,13 @@ const ButtonEje = Styled.div `
 const ButtonLarge = Styled.div`
     height: 76px;
     width: 196px;
+    font-size: 40px;
     background-color: #A91079;
     border: 1px solid #480ca8;
     border-radius: 5px;
     cursor: pointer;
+    text-align: center;
+    line-height: 75px;
     :hover {
         box-shadow: 0 0.5em 0.5em -0.4em yellow;
         border-color: yellow;
@@ -38,6 +44,7 @@ const ButtonLarge = Styled.div`
 const ButtonBig = Styled.div`
     height: 153px;
     width: 97px;
+    font-size: 40px;
     position: relative;
     bottom: 77.5px;
     background-color: #A91079;
@@ -45,6 +52,8 @@ const ButtonBig = Styled.div`
     border: 1px solid #480ca8;
     border-radius: 5px;
     cursor: pointer;
+    text-align: center;
+    line-height: 150px;
     :hover {
         box-shadow: 0 0.5em 0.5em -0.4em yellow;
         border-color: yellow;

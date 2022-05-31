@@ -4,7 +4,7 @@ import Keyboard from './Keyboard'
 
 
 const CalculatorBox = () => {
-  const [result, setResult] = useState(0)  
+  const [screenResult, setScreenResult] = useState(0)  
   return (
     <div style={{
         display: "flex",
@@ -17,8 +17,8 @@ const CalculatorBox = () => {
         border: "4px solid #570A57",
         fontSize: "2rem"
     }}>
-        <Screen result={result}/>
-        <Keyboard/>
+        <Screen setScreenResult={setScreenResult} screenResult={screenResult}/>
+        <Keyboard setScreenResult={setScreenResult}/>
     </div>
   )
 }
