@@ -18,7 +18,7 @@ const CalculatorBox = () => {
         fontSize: "2rem"
     }}>
         <Screen setScreenResult={setScreenResult} screenResult={screenResult}/>
-        <Keyboard setScreenResult={setScreenResult}/>
+        <Keyboard setScreenResult={setScreenResult} screenResult={screenResult}/>
     </div>
   )
 }
