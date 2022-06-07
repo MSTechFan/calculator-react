@@ -4,12 +4,12 @@ import Keyboard from './Keyboard'
 
 
 const CalculatorBox = () => {
-  const [screenResult, setScreenResult] = useState(0)  
+  const [screenResult, setScreenResult] = useState("")  
   return (
     <div style={{
         display: "flex",
         width: "400px",
-        height: "450px",
+        height: "480px",
         flexDirection: "column",
         backgroundColor: "#2E0249",
         color: "white",

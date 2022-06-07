@@ -1,14 +1,25 @@
-import {React} from 'react'
+import {React, useState} from 'react'
 import { ButtonEje, ButtonLarge, ButtonBig } from './Buttons'
 
 const Keyboard = (props) => {
 
-
+  const [firstValue, setFirstValue] = useState([])
+  const [secondValue, setSecondValue] = useState(0)
+  const [result, setResult] = useState(0)
   //write logic to handle every operation of the calculator
-  const handleOperation = (firstValue, secondValue, operation) => {
+
+  const resetValues = () => {
+    setFirstValue([])
+    props.setScreenResult("")
+    setSecondValue(null)
+  }
+
+  const handleOperation = (operation) => {
     switch(operation){
       case "suma":
-        //do adding
+          setFirstValue([props.screenResult, operation]) // se tiene que sobreescribir los resultados
+          props.setScreenResult("")
+          console.log(firstValue)
       case "resta":
         //do substraction
       case "multiplicacion":
@@ -16,7 +27,17 @@ const Keyboard = (props) => {
       case "division":
         //do divide
       default:
-        //sent to hell
+        //send to hell
+    }
+  }
+
+  // descrubimos que el segunda valor alojado en secondValue no toma la primera inicialización que se hace
+
+  const handleResult = (arrayOperation) => {
+    switch(arrayOperation[1]) {
+      case "suma":
+        setSecondValue(props.screenResult)
+        setResult((+arrayOperation[0]) + (+secondValue))
     }
   }
   return (
@@ -24,7 +45,7 @@ const Keyboard = (props) => {
         
         {/* first line */}  
         <ButtonLarge onClick={() => props.setScreenResult("")}>AC</ButtonLarge>
-        <ButtonEje onClick={() => props.setScreenResult("")}>+</ButtonEje>
+        <ButtonEje onClick={() => handleOperation("suma")}>+</ButtonEje>
         <ButtonEje onClick={() => props.setScreenResult("")}>-</ButtonEje>
         {/* second line */}
         <ButtonEje onClick={() => props.setScreenResult(props.screenResult + "1")}>1</ButtonEje>
@@ -46,7 +67,7 @@ const Keyboard = (props) => {
        <ButtonLarge onClick={() => props.setScreenResult(props.screenResult + "0")}>0</ButtonLarge>
        <ButtonEje onClick={() => props.setScreenResult(props.screenResult + ".")}>.</ButtonEje>
 
-       <ButtonBig>=</ButtonBig>
+       <ButtonBig onClick={() => handleResult(firstValue)}>=</ButtonBig>
        
         
     </div>
