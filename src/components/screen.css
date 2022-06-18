@@ -17,20 +17,5 @@
     background-color: #2E0249;
     color: white;
     text-align: right;
+    letter-spacing: 0;
 }
-
-.screenInput:focus-visible {
-    outline: none;
-}
-
-.screenInput::-webkit-outer-spin-button,
-.screenInput::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-::placeholder {
-  color: white;
-}
-
-

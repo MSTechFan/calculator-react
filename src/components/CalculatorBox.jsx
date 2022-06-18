@@ -1,10 +1,36 @@
-import {React, useState} from 'react'
+import {React, useState, useReducer} from 'react'
 import Screen from './Screen'
 import Keyboard from './Keyboard'
 
 
+export const ACTIONS  = {
+  OPERATION: "operation",
+  RESET: "reset",
+  ADD: "add",
+  EVALUATE: "evaluate"
+}
+
+
+
 const CalculatorBox = () => {
-  const [screenResult, setScreenResult] = useState("")  
+  function reducer (state, {type, payload}) {
+    switch(type){
+      case ACTIONS.ADD:
+          return {
+            ...state,
+            currentInput: `${state.currentInput || "" }${payload.digit}`
+          }     
+      case ACTIONS.RESET:
+        return {
+          currentInput: null
+        }  
+    }
+
+  }
+  
+
+  const [{currentInput, previousInput, operation, overwrite = true}, dispatch] = useReducer(reducer, {})
+
   return (
     <div style={{
         display: "flex",
@@ -17,8 +43,8 @@ const CalculatorBox = () => {
         border: "4px solid #570A57",
         fontSize: "2rem"
     }}>
-        <Screen setScreenResult={setScreenResult} screenResult={screenResult}/>
-        <Keyboard setScreenResult={setScreenResult} screenResult={screenResult}/>
+        <Screen currentInput={currentInput}/>
+        <Keyboard dispatch={dispatch}/>
     </div>
   )
 }
