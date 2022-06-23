@@ -1,26 +1,3 @@
-<<<<<<< HEAD
-.screenInput {
-    background-color: #2E0249;
-    color: white;
-    text-align: right;
-}
-
-.screenInput:focus-visible {
-    outline: none;
-}
-
-.screenInput::-webkit-outer-spin-button,
-.screenInput::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-::placeholder {
-  color: white;
-}
-
-
-=======
 .screen {
   flex: 1;
   text-align: end;
@@ -42,4 +19,3 @@
     text-align: right;
     letter-spacing: 0;
 }
->>>>>>> a9857ff9a99f2ff06366c52ef65a3d05f31577be
