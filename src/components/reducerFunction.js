@@ -6,6 +6,7 @@ export const ACTIONS  = {
   }
 
   let resultEv = null
+  let inputSaved = null
   
 
 export function reducer (state, {type, payload}) {
@@ -50,7 +51,16 @@ export function reducer (state, {type, payload}) {
             overwrite: false,
           }
       case ACTIONS.OPERATION:
-          let inputSaved = state.currentInput
+        if(state.previousInput){
+           return {
+            ...state,
+            previousInput: eval(state.previousInput + state.operation + state.currentInput).toString(),
+            currentInput: null,
+            operation: payload.digit,
+            overwrite: false
+           }
+        }
+          inputSaved = state.currentInput
           return {
             ...state,
             previousInput: inputSaved,
@@ -76,7 +86,7 @@ export function reducer (state, {type, payload}) {
                   operation: null,
                   previousInput: null
             }
-          case "x":
+          case "*":
             resultEv = (+ state.previousInput) * (+ state.currentInput)
             return {
                 ...state,

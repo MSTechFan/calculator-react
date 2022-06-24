@@ -14,7 +14,7 @@ const Keyboard = (props) => {
         <ButtonEje onClick={() => props.dispatch({type: ACTIONS.ADD, payload: {digit: "1"}})}>1</ButtonEje>
         <ButtonEje onClick={() => props.dispatch({type: ACTIONS.ADD, payload: {digit: "2"}})}>2</ButtonEje>
         <ButtonEje onClick={() => props.dispatch({type: ACTIONS.ADD, payload: {digit: "3"}})}>3</ButtonEje>
-        <ButtonEje onClick={() => props.dispatch({type: ACTIONS.OPERATION, payload: {digit: "x"}})}>x</ButtonEje>
+        <ButtonEje onClick={() => props.dispatch({type: ACTIONS.OPERATION, payload: {digit: "*"}})}>x</ButtonEje>
         {/* third line */}
         <ButtonEje onClick={() => props.dispatch({type: ACTIONS.ADD, payload: {digit: "4"}})}>4</ButtonEje>
         <ButtonEje onClick={() => props.dispatch({type: ACTIONS.ADD, payload: {digit: "5"}})}>5</ButtonEje>
